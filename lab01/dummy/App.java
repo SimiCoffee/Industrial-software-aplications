@@ -10,7 +10,24 @@ public class App {
 		System.out.println("2. Amstrong");
 		System.out.println("3. Oblicz wiek");
 		System.out.println("4. Sekwencja");
+		System.out.println("5. Książka");
 		System.out.println("0. Exit");
+	}
+
+	public static void book() {
+		Author author = new Author("Jan Kowalski", "jan@kowalski.mail", Gender.MALE);
+
+		Book book = new Book("W pustyni i w puszczy", 20.0, author);
+		System.out.println(book);
+
+		author.setName("Maria Konopnicka");
+		author.setEmail("maria@mar.mar");
+		author.setGender(Gender.FEMALE);
+		book.setName("O dwóch takich, co ukradli księżyc");
+		book.setPrice(15.0);
+		book.setAuthor(author);
+		book.setQty(10);
+		System.out.println(book);
 	}
 
 	public static void main(String[] args) {
@@ -25,6 +42,7 @@ public class App {
 				case 2 -> System.out.println(Amstrong.isArmstrong(reader));
 				case 3 -> System.out.println(Seconds.calculateAge(reader));
 				case 4 -> Sequence.app(reader);
+				case 5 -> book();
 				case 0 -> exit = true;
 				default -> System.out.println("Niepoprawna opcja");
 			}
