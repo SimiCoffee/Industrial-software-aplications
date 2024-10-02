@@ -8,6 +8,7 @@ public class App {
 		System.out.println("---MENU---");
 		System.out.println("1. Hello World");
 		System.out.println("2. Amstrong");
+		System.out.println("3. Oblicz wiek");
 		System.out.println("0. Exit");
 	}
 
@@ -17,9 +18,11 @@ public class App {
 		while (!exit) {
 			menu();
 			int option = reader.nextInt();
+			reader.nextLine();
 			switch (option) {
 				case 1 -> helloWorld();
-				case 2 -> System.out.println(Amstrong.isArmstrong();
+				case 2 -> System.out.println(Amstrong.isArmstrong(reader));
+				case 3 -> System.out.println(Seconds.calculateAge(reader));
 				case 0 -> exit = true;
 				default -> System.out.println("Niepoprawna opcja");
 			}

@@ -1,8 +1,13 @@
 package dummy;
 
+import java.util.Scanner;
+
 public class Amstrong {
 
-	public static boolean isArmstrong(int n) {
+	public static boolean isArmstrong(Scanner reader) {
+		System.out.println("Podaj liczbę");
+		int n = reader.nextInt();
+		reader.nextLine();
 		int sum = 0;
 		int temp = n;
 		int length = String.valueOf(n).length();
