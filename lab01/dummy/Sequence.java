@@ -2,22 +2,6 @@ package dummy;
 
 import java.util.Scanner;
 
-// Napisz program, który dla liczby naturalnej \( n \) wypisze poniższe wzory (jeden pod drugim). Poniżej jest przykład dla n=3.
-// W przypadku niepoprawnych danych program ma ponownie je wczytać.
-// Zakładamy, że na końcu linii jest wyłącznie znak nowej linii.
-// x
-// xx
-// xxx
-// xxx
-// xx
-// x
-// xxx
-//   xx
-//    x
-//    x
-//   xx
-// xxx
-
 public class Sequence {
 	public static void printSequence(int n) {
 		for (int i = 1; i <= n; i++) {
