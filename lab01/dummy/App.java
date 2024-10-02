@@ -9,6 +9,7 @@ public class App {
 		System.out.println("1. Hello World");
 		System.out.println("2. Amstrong");
 		System.out.println("3. Oblicz wiek");
+		System.out.println("4. Sekwencja");
 		System.out.println("0. Exit");
 	}
 
@@ -23,6 +24,7 @@ public class App {
 				case 1 -> helloWorld();
 				case 2 -> System.out.println(Amstrong.isArmstrong(reader));
 				case 3 -> System.out.println(Seconds.calculateAge(reader));
+				case 4 -> Sequence.app(reader);
 				case 0 -> exit = true;
 				default -> System.out.println("Niepoprawna opcja");
 			}
