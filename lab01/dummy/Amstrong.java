@@ -16,4 +16,11 @@ public class Amstrong {
 		return sum == n;
 	}
 
+	public static boolean isArmstrongInput(Scanner reader) {
+		System.out.println("Podaj liczbę");
+		int n = reader.nextInt();
+		reader.nextLine();
+		return isArmstrong(n);
+	}
+
 }

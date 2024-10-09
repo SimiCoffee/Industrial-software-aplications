@@ -30,13 +30,6 @@ public class App {
 		System.out.println(book);
 	}
 
-	private static boolean isArmstrongInput(Scanner reader) {
-		System.out.println("Podaj liczbę");
-		int n = reader.nextInt();
-		reader.nextLine();
-		System.out.println(Amstrong.isArmstrong(n));
-	}
-
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		boolean exit = false;
@@ -46,7 +39,7 @@ public class App {
 			reader.nextLine();
 			switch (option) {
 				case 1 -> helloWorld();
-				case 2 -> isArmstrongInput(reader);
+				case 2 -> System.out.println(Amstrong.isArmstrongInput(reader));
 				case 3 -> System.out.println(Seconds.calculateAgeInput(reader));
 				case 4 -> Sequence.app(reader);
 				case 5 -> book();
