@@ -39,8 +39,8 @@ public class App {
 			reader.nextLine();
 			switch (option) {
 				case 1 -> helloWorld();
-				case 2 -> System.out.println(Amstrong.isArmstrong(reader));
-				case 3 -> System.out.println(Seconds.calculateAge(reader));
+				case 2 -> System.out.println(Amstrong.isArmstrongInput(reader));
+				case 3 -> System.out.println(Seconds.calculateAgeInput(reader));
 				case 4 -> Sequence.app(reader);
 				case 5 -> book();
 				case 0 -> exit = true;
