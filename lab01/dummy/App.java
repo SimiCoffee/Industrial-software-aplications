@@ -34,7 +34,45 @@ public class App {
 		System.out.println("Podaj liczbę");
 		int n = reader.nextInt();
 		reader.nextLine();
-		System.out.println(Amstrong.isArmstrong(n));
+		return Amstrong.isArmstrong(n);
+	}
+
+	public static void planetMenu() {
+		System.out.println("wybierz planetę");
+		System.out.println("1. Merkury");
+		System.out.println("2. Wenus");
+		System.out.println("3. Earth");
+		System.out.println("4. Mars");
+		System.out.println("5. Jupiter");
+		System.out.println("6. Saturn");
+		System.out.println("7. Uranus");
+		System.out.println("8. Neptune");
+
+	}
+
+	public static String sequenceGenerator(Scanner reader) {
+		System.out.println("Podaj liczbę naturalną n: ");
+		int n = reader.nextInt();
+		reader.nextLine();
+		while (n <= 0) {
+			System.out.println("Podana liczba musi być większa od 0.");
+			System.out.println("Podaj liczbę naturalną n: ");
+			n = reader.nextInt();
+			reader.nextLine();
+		}
+		return Sequence.printSequence(n);
+
+	}
+
+	private static double calculateAge(Scanner reader) {
+		planetMenu();
+		int planetChoice = reader.nextInt();
+		reader.nextLine();
+		System.out.println("Podaj wiek w sekundach: ");
+		int seconds = reader.nextInt();
+		reader.nextLine();
+		Planet planet = Planet.values()[planetChoice - 1];
+		return planet.getAgeByPlanet(seconds);
 	}
 
 	public static void main(String[] args) {
@@ -46,9 +84,9 @@ public class App {
 			reader.nextLine();
 			switch (option) {
 				case 1 -> helloWorld();
-				case 2 -> isArmstrongInput(reader);
-				case 3 -> System.out.println(Seconds.calculateAgeInput(reader));
-				case 4 -> Sequence.app(reader);
+				case 2 -> System.out.println(isArmstrongInput(reader));
+				case 3 -> System.out.println(calculateAge(reader));
+				case 4 -> System.out.println(sequenceGenerator(reader));
 				case 5 -> book();
 				case 0 -> exit = true;
 				default -> System.out.println("Niepoprawna opcja");
