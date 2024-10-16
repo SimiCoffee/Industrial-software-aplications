@@ -75,6 +75,32 @@ public class App {
 		return planet.getAgeByPlanet(seconds);
 	}
 
+	public static void testAll() {
+		System.out.println("Amstrong, 10: ", false == Amstrong.isArmstrong(10));
+		System.out.println(true == Amstrong.isArmstrong(153));
+		System.out.println(true == Amstrong.isArmstrong(9474));
+
+		Planet planet = Planet.EARTH;
+		System.out.println(1.0 == planet.getAgeByPlanet(31557600));
+		System.out.println(0.2408467 == planet.getRevolutionTimeInYears());
+		System.out.println(0.5 == planet.getAgeByPlanet(15778800));
+
+		planet = Planet.MERCURY;
+		System.out.println(0.5 == planet.getAgeByPlanet(15778800));
+		System.out.println(0.2408467 == planet.getRevolutionTimeInYears());
+
+		// sequence
+		System.out.println("x\nxx\nxxx\nxxxxxxxxx\nxxxx\nxxx\nxx\nx\n".equals(Sequence.printSequence(5)));
+		System.out.println("x\nxx\nxxx\nxxxxxxxxx\nxxxx\nxxx\nxx\nx\n".equals(Sequence.printSequence(5, "x")));
+
+		// book
+		Author author = new Author("Jan Kowalski", "jan@kowalski.mail", Gender.MALE);
+		Book book = new Book("W pustyni i w puszczy", 20.0, author);
+		System.out.println(
+				"Book[name=W pustyni i w puszczy, author=Author[name=Jan Kowalski, email=jan@kowalski.mail, gender=Male], price=20.0, qty=0]"
+						.equals(book.toString()));
+	}
+
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		boolean exit = false;
@@ -89,6 +115,7 @@ public class App {
 				case 4 -> System.out.println(sequenceGenerator(reader));
 				case 5 -> book();
 				case 0 -> exit = true;
+				case 88 -> testAll();
 				default -> System.out.println("Niepoprawna opcja");
 			}
 		}
