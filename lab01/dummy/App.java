@@ -76,22 +76,25 @@ public class App {
 	}
 
 	public static void testAll() {
-		System.out.println("Amstrong, 10: ", false == Amstrong.isArmstrong(10));
-		System.out.println(true == Amstrong.isArmstrong(153));
-		System.out.println(true == Amstrong.isArmstrong(9474));
+		System.out.println("Amstrong, 10: " + (false == Amstrong.isArmstrong(10)));
+		System.out.println("Amstrong, 153: " + (true == Amstrong.isArmstrong(153)));
+		System.out.println("Amstrong, 9474: " + (true == Amstrong.isArmstrong(9474)));
 
+		// planet
 		Planet planet = Planet.EARTH;
-		System.out.println(1.0 == planet.getAgeByPlanet(31557600));
-		System.out.println(0.2408467 == planet.getRevolutionTimeInYears());
-		System.out.println(0.5 == planet.getAgeByPlanet(15778800));
+		System.out.println("Earth for 1,000,000,000: " +
+				(31.68808781402895 == planet.getAgeByPlanet(1000000000)));
 
-		planet = Planet.MERCURY;
-		System.out.println(0.5 == planet.getAgeByPlanet(15778800));
-		System.out.println(0.2408467 == planet.getRevolutionTimeInYears());
-
+		Planet planetMars = Planet.MARS;
+		System.out.println("Mars for 1,000,000,000: " +
+				(16.848054878116695 == planetMars.getAgeByPlanet(1000000000)));
 		// sequence
-		System.out.println("x\nxx\nxxx\nxxxxxxxxx\nxxxx\nxxx\nxx\nx\n".equals(Sequence.printSequence(5)));
-		System.out.println("x\nxx\nxxx\nxxxxxxxxx\nxxxx\nxxx\nxx\nx\n".equals(Sequence.printSequence(5, "x")));
+		System.out.println("Sequence 1: " +
+				("x\nxx\nxxx\nxxxx\nxxxxx\nxxxxx\nxxxx\nxxx\nxx\nx\nxxxxx\n xxxx\n  xxx\n   xx\n    x\n    x\n   xx\n  xxx\n xxxx\nxxxxx\n"
+						.equals(Sequence.printSequence(5))));
+		System.out.println("Sequence 2: "
+				+ ("a\naa\naaa\naaaa\naaaaa\naaaaa\naaaa\naaa\naa\na\naaaaa\n aaaa\n  aaa\n   aa\n    a\n    a\n   aa\n  aaa\n aaaa\naaaaa\n"
+						.equals(Sequence.printSequence(5, "a"))));
 
 		// book
 		Author author = new Author("Jan Kowalski", "jan@kowalski.mail", Gender.MALE);
