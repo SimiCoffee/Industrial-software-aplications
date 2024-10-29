@@ -1,0 +1,22 @@
+<!-- src/main/resources/beans.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person1" class="com.example.main.domain.Person">
+        <constructor-arg value="550e8400-e29b-41d4-a716-446655440010"/>
+        <constructor-arg value="Adam"/>
+        <constructor-arg value="Nowak"/>
+        <constructor-arg value="adam.nowak@example.com"/>
+        <constructor-arg value="1985"/>
+    </bean>
+
+    <bean id="person2" class="com.example.main.domain.Person">
+        <constructor-arg value="550e8400-e29b-41d4-a716-446655440011"/>
+        <constructor-arg value="Ewa"/>
+        <constructor-arg value="Kowalska"/>
+        <constructor-arg value="ewa.kowalska@example.com"/>
+        <constructor-arg value="1990"/>
+    </bean>
+</beans>
