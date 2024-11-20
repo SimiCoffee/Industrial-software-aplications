@@ -4,6 +4,8 @@ import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class WarframeItem {
 
 	private String id;
@@ -25,6 +27,7 @@ public class WarframeItem {
 
 	private boolean isPrime;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@PastOrPresent(message = "Release date must be in the past or present")
 	private LocalDate releaseDate;
 
