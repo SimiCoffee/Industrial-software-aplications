@@ -20,8 +20,8 @@ public class MainApplication {
 	@Bean
 	CommandLineRunner runner(ApplicationContext ctx, CsvPersonParser csvPersonParser) {
 		return args -> {
-			String filePath = "src/main/resources/people.csv";
-			Map<String, Person> personMap = csvPersonParser.parseCsv(filePath);
+			String fileName = "people.csv";
+			Map<String, Person> personMap = csvPersonParser.parseCsv(fileName);
 
 			// Wypisujemy wszystkie osoby
 			personMap.values().forEach(System.out::println);

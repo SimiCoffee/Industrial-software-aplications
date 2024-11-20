@@ -2,11 +2,14 @@ package com.example.main.service;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
+
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import com.example.main.domain.Person;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,10 +17,11 @@ import java.util.Map;
 @Component
 public class CsvPersonParser {
 
-	public Map<String, Person> parseCsv(String filePath) {
+	public Map<String, Person> parseCsv(String file) {
 		Map<String, Person> personMap = new HashMap<>();
 
-		try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+		try (CSVReader reader = new CSVReader(
+				new InputStreamReader(new ClassPathResource(file).getInputStream()))) {
 			List<String[]> rows = reader.readAll();
 			// Pomijamy nagłówek (pierwszy wiersz)
 			for (int i = 1; i < rows.size(); i++) {
