@@ -1,0 +1,21 @@
+meta {
+  name: postWarframe
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:8080/api/warframe/items
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "Excaliburrrrr",
+      "health": 300,
+      "shields": 300,
+      "armor": 225,
+      "energy": 150
+  },
+}
