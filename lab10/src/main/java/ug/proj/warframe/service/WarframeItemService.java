@@ -24,6 +24,7 @@ public class WarframeItemService {
 		return warframeItemRepository.save(item);
 	}
 
+	@LogMethodCall
 	public List<WarframeItem> getAllItems() {
 		return warframeItemRepository.findAll();
 	}
