@@ -1,0 +1,3 @@
+- statystyka i profil/warframeItem i warframeLoadout podzielić na jedno i dwukierunkowe
+- adnotacje nad getterami
+- nie musimy podawać `joinColumns`
