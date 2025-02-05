@@ -1,0 +1,22 @@
+meta {
+  name: delWarframe
+  type: http
+  seq: 8
+}
+
+delete {
+  url: http://localhost:8080/api/warframe/items/9
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 9,
+    "name": "Excaliburrrrr",
+    "health": 0,
+    "shields": 300,
+    "armor": 225,
+    "energy": 150
+  }
+}

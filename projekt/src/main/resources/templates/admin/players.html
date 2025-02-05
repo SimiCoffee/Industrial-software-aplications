@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista graczy</title>
+    <link rel="stylesheet" href="/css/dark-style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="admin-container">
+      <h1>Lista graczy</h1>
+
+      <div class="nav-buttons">
+        <a href="/admin" class="btn btn-secondary">Panel administratora</a>
+        <a href="/admin/warframes" class="btn btn-primary"
+          >Zobacz listę Warframe'ów</a
+        >
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Imię</th>
+            <th>Mastery Rank</th>
+            <th>Loadouts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="player : ${players}">
+            <td th:text="${player.id}"></td>
+            <td th:text="${player.name}"></td>
+            <td th:text="${player.profile.masteryRank}"></td>
+            <td>
+              <ul>
+                <li
+                  th:each="loadout : ${player.warframeLoadouts}"
+                  th:text="${loadout.loadoutName}"
+                ></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+meta {
+  name: searchWF
+  type: http
+  seq: 18
+}
+
+get {
+  url: http://localhost:8080/api/warframe/loadouts/search?playerName=WarframeMaster
+  body: none
+  auth: none
+}
+
+params:query {
+  playerName: WarframeMaster
+  ~warframeName: Volt
+  ~minHealth: 300
+  ~maxHealth: 500
+  ~armor: 105
+  ~page: 1
+  ~size: 2
+}

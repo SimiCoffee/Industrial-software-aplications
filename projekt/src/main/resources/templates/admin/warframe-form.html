@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dodaj Warframe</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mt-4">Dodaj Warframe</h2>
+
+      <form
+        th:action="@{/admin/warframes}"
+        th:object="${warframe}"
+        method="post"
+      >
+        <div class="mb-3">
+          <label class="form-label">Nazwa</label>
+          <input type="text" class="form-control" th:field="*{name}" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Zdrowie</label>
+          <input
+            type="number"
+            class="form-control"
+            th:field="*{health}"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Pancerz</label>
+          <input
+            type="number"
+            class="form-control"
+            th:field="*{armor}"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Energia</label>
+          <input
+            type="number"
+            class="form-control"
+            th:field="*{energy}"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+        <a href="/admin/warframes" class="btn btn-secondary">Anuluj</a>
+      </form>
+    </div>
+  </body>
+</html>

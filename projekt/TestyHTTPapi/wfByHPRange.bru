@@ -1,0 +1,16 @@
+meta {
+  name: wfByHPRange
+  type: http
+  seq: 11
+}
+
+get {
+  url: http://localhost:8080/api/warframe/items/by-health-range?minHealth=300&maxHealth=500
+  body: none
+  auth: none
+}
+
+params:query {
+  minHealth: 300
+  maxHealth: 500
+}

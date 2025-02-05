@@ -1,0 +1,15 @@
+meta {
+  name: getNativePlayerByRank
+  type: http
+  seq: 19
+}
+
+get {
+  url: http://localhost:8080/api/warframe/players/by-mastery-rank?rank=15
+  body: none
+  auth: none
+}
+
+params:query {
+  rank: 15
+}

@@ -1,0 +1,22 @@
+meta {
+  name: putWarframe
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:8080/api/warframe/items/9
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 9,
+    "name": "Excaliburrrrr",
+    "health": 300,
+    "shields": 200,
+    "armor": 200,
+    "energy": 150
+  }
+}
