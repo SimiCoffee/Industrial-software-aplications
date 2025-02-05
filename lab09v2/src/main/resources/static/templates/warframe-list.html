@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Warframes</title>
+  </head>
+  <body>
+    <h1>All Warframes</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Health</th>
+          <th>Shields</th>
+          <th>Armor</th>
+          <th>Energy</th>
+          <th>Release Date</th>
+          <th>Is Prime</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="warframe : ${warframes}">
+          <td th:text="${warframe.name}"></td>
+          <td th:text="${warframe.health}"></td>
+          <td th:text="${warframe.shields}"></td>
+          <td th:text="${warframe.armor}"></td>
+          <td th:text="${warframe.energy}"></td>
+          <td th:text="${warframe.releaseDate}"></td>
+          <td th:text="${warframe.isPrime ? 'Yes' : 'No'}"></td>
+          <td>
+            <a th:href="@{/warframe/edit/{id}(id=${warframe.id})}">Edit</a>
+            <a th:href="@{/warframe/delete/{id}(id=${warframe.id})}">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="/warframe/add">Add New Warframe</a><br />
+  </body>
+</html>
