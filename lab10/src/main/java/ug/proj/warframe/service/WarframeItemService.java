@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import ug.proj.warframe.annotations.LogMethodCall;
+import ug.proj.warframe.annotations.RequireApproval;
 import ug.proj.warframe.domain.WarframeItem;
 import ug.proj.warframe.repository.WarframeItemRepository;
 
@@ -29,6 +30,7 @@ public class WarframeItemService {
 		return warframeItemRepository.findAll();
 	}
 
+	@RequireApproval
 	public Optional<WarframeItem> findById(Long id) {
 		return warframeItemRepository.findById(id);
 	}

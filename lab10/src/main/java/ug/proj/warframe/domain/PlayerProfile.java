@@ -4,7 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class PlayerProfile {
 
@@ -16,44 +24,4 @@ public class PlayerProfile {
     private long experience;
     private String clan;
 
-    public PlayerProfile() {
-    }
-
-    public PlayerProfile(int masteryRank, long experience, String clan) {
-        this.masteryRank = masteryRank;
-        this.experience = experience;
-        this.clan = clan;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getMasteryRank() {
-        return masteryRank;
-    }
-
-    public void setMasteryRank(int masteryRank) {
-        this.masteryRank = masteryRank;
-    }
-
-    public long getExperience() {
-        return experience;
-    }
-
-    public void setExp(long experience) {
-        this.experience = experience;
-    }
-
-    public String getClan() {
-        return clan;
-    }
-
-    public void setClan(String clan) {
-        this.clan = clan;
-    }
 }

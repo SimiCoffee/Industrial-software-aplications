@@ -14,7 +14,15 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Player {
 
@@ -35,60 +43,7 @@ public class Player {
     private PlayerStatistics statistics;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "player", fetch = FetchType.LAZY)
+    @Builder.Default
     private Set<WarframeLoadout> warframeLoadouts = new HashSet<>();
 
-    public Player() {
-    }
-
-    public Player(String name, PlayerProfile profile, PlayerStatistics statistics) {
-        this.name = name;
-        this.profile = profile;
-        this.statistics = statistics;
-        this.warframeLoadouts = new HashSet<>();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public PlayerProfile getProfile() {
-        return profile;
-    }
-
-    public void setProfile(PlayerProfile profile) {
-        this.profile = profile;
-    }
-
-    public PlayerStatistics getStatistics() {
-        return statistics;
-    }
-
-    public void setStatistics(PlayerStatistics statistics) {
-        this.statistics = statistics;
-    }
-
-    public Set<WarframeLoadout> getWarframeLoadouts() {
-        return warframeLoadouts;
-    }
-
-    public void setWarframeLoadouts(Set<WarframeLoadout> warframeLoadouts) {
-        this.warframeLoadouts = warframeLoadouts;
-    }
-
-    public void addWarframeLoadout(WarframeLoadout loadout) {
-        this.warframeLoadouts.add(loadout);
-        loadout.setPlayer(this);
-    }
 }

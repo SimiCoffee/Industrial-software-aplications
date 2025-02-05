@@ -4,14 +4,9 @@ import java.util.Set;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.web.servlet.DispatcherServlet;
 
 import ug.proj.warframe.domain.Player;
 import ug.proj.warframe.domain.PlayerProfile;
@@ -61,14 +56,22 @@ public class WarframeApplication {
 	CommandLineRunner appSetup(WarframeItemService warframeItemService, PlayerService playerService,
 			WarframeLoadoutService warframeLoadoutService) {
 		return args -> {
-			WarframeItem excalibur = new WarframeItem("Excalibur", 370, 370, 240, 150);
-			WarframeItem mag = new WarframeItem("Mag", 280, 555, 105, 190);
-			WarframeItem volt = new WarframeItem("Volt", 370, 555, 105, 150);
-			WarframeItem inaros = new WarframeItem("Inaros", 2310, 0, 240, 150);
-			WarframeItem grendelPrime = new WarframeItem("Grendel Prime", 1295, 95, 400, 250);
-			WarframeItem wukongPrime = new WarframeItem("Wukong Prime", 555, 445, 290, 195);
-			WarframeItem zephyrPrime = new WarframeItem("Zephyr Prime", 555, 555, 135, 225);
-			WarframeItem atlasPrime = new WarframeItem("Atlas Prime", 650, 655, 500, 265);
+			WarframeItem excalibur = WarframeItem.builder().name("Excalibur").health(370).shields(370)
+					.armor(240).energy(150).build();
+			WarframeItem mag = WarframeItem.builder().name("Mag").health(280).shields(555).armor(105)
+					.energy(190).build();
+			WarframeItem volt = WarframeItem.builder().name("Volt").health(370).shields(555).armor(105)
+					.energy(150).build();
+			WarframeItem inaros = WarframeItem.builder().name("Inaros").health(2310).shields(0).armor(240)
+					.energy(150).build();
+			WarframeItem grendelPrime = WarframeItem.builder().name("Grendel Prime").health(1295)
+					.shields(95).armor(400).energy(250).build();
+			WarframeItem wukongPrime = WarframeItem.builder().name("Wukong Prime").health(555).shields(445)
+					.armor(290).energy(195).build();
+			WarframeItem zephyrPrime = WarframeItem.builder().name("Zephyr Prime").health(555).shields(555)
+					.armor(135).energy(225).build();
+			WarframeItem atlasPrime = WarframeItem.builder().name("Atlas Prime").health(650).shields(655)
+					.armor(500).energy(265).build();
 
 			warframeItemService.addItem(excalibur);
 			warframeItemService.addItem(mag);
@@ -79,13 +82,19 @@ public class WarframeApplication {
 			warframeItemService.addItem(zephyrPrime);
 			warframeItemService.addItem(atlasPrime);
 
-			Skill slashDash = new Skill("Slash Dash", "Dashes between enemies with energy slashes.");
-			Skill pull = new Skill("Pull", "Pulls enemies towards you.");
-			Skill shock = new Skill("Shock", "Sends an electric bolt to a target.");
-			Skill sandstorm = new Skill("Sandstorm", "Creates a whirlwind of sand.");
-			Skill primalFury = new Skill("Primal Fury", "Unleashes staff attacks.");
-			Skill landslide = new Skill("Landslide", "Dashes and punches enemies.");
-			Skill tornado = new Skill("Tornado", "Summons destructive tornadoes.");
+			Skill slashDash = Skill.builder().name("Slash Dash")
+					.description("Dashes between enemies with energy slashes.").build();
+			Skill pull = Skill.builder().name("Pull").description("Pulls enemies towards you.").build();
+			Skill shock = Skill.builder().name("Shock").description("Sends an electric bolt to a target.")
+					.build();
+			Skill sandstorm = Skill.builder().name("Sandstorm").description("Creates a whirlwind of sand.")
+					.build();
+			Skill primalFury = Skill.builder().name("Primal Fury").description("Unleashes staff attacks.")
+					.build();
+			Skill landslide = Skill.builder().name("Landslide").description("Dashes and punches enemies.")
+					.build();
+			Skill tornado = Skill.builder().name("Tornado").description("Summons destructive tornadoes.")
+					.build();
 
 			Set<Skill> excaliburSkills = Set.of(slashDash);
 			Set<Skill> magSkills = Set.of(pull);
@@ -95,30 +104,56 @@ public class WarframeApplication {
 			Set<Skill> atlasSkills = Set.of(landslide);
 			Set<Skill> zephyrSkills = Set.of(tornado);
 
-			PlayerProfile profile1 = new PlayerProfile(10, 50000, "Tenno");
-			PlayerProfile profile2 = new PlayerProfile(20, 100000, "Lotus");
+			PlayerProfile profile1 = PlayerProfile.builder()
+					.masteryRank(10)
+					.experience(50000)
+					.clan("Tenno")
+					.build();
 
-			PlayerStatistics stats1 = new PlayerStatistics(100, 10, 5, 500, 100000);
-			PlayerStatistics stats2 = new PlayerStatistics(250, 15, 8, 1200, 250000);
+			PlayerProfile profile2 = PlayerProfile.builder()
+					.masteryRank(20)
+					.experience(120000)
+					.clan("Lotus")
+					.build();
 
-			Player player1 = new Player("WarframeMaster", profile1, stats1);
-			Player player2 = new Player("FrameCollector", profile2, stats2);
+			PlayerStatistics stats1 = PlayerStatistics.builder()
+					.missionsCompleted(100)
+					.missionsFailed(10)
+					.missionsQuit(5)
+					.timePlayed(500)
+					.grossIncome(100000)
+					.build();
+
+			PlayerStatistics stats2 = PlayerStatistics.builder()
+					.missionsCompleted(250)
+					.missionsFailed(15)
+					.missionsQuit(8)
+					.timePlayed(1200)
+					.grossIncome(250000)
+					.build();
+
+			Player player1 = Player.builder().name("WarframeMaster").profile(profile1).statistics(stats1)
+					.build();
+			Player player2 = Player.builder().name("FrameCollector").profile(profile2).statistics(stats2)
+					.build();
 
 			playerService.addPlayer(player1);
 			playerService.addPlayer(player2);
 
-			WarframeLoadout loadout1 = new WarframeLoadout("Excalibur's Loadout", excalibur,
-					excaliburSkills, player1);
-			WarframeLoadout loadout2 = new WarframeLoadout("Mag's Loadout", mag, magSkills, player1);
-			WarframeLoadout loadout3 = new WarframeLoadout("Volt's Loadout", volt, voltSkills, player1);
-			WarframeLoadout loadout4 = new WarframeLoadout("Sandstorm Build", inaros, inarosSkills,
-					player2);
-			WarframeLoadout loadout5 = new WarframeLoadout("Titan Strength", atlasPrime, atlasSkills,
-					player2);
-			WarframeLoadout loadout6 = new WarframeLoadout("Wukong Fury", wukongPrime, grendelSkills,
-					player2);
-			WarframeLoadout loadout7 = new WarframeLoadout("Zephyr's Storm", zephyrPrime, zephyrSkills,
-					player1);
+			WarframeLoadout loadout1 = WarframeLoadout.builder().loadoutName("Excalibur's Loadout")
+					.warframe(excalibur).skills(excaliburSkills).player(player1).build();
+			WarframeLoadout loadout2 = WarframeLoadout.builder().loadoutName("Mag's Loadout").warframe(mag)
+					.skills(magSkills).player(player1).build();
+			WarframeLoadout loadout3 = WarframeLoadout.builder().loadoutName("Volt's Loadout")
+					.warframe(volt).skills(voltSkills).player(player1).build();
+			WarframeLoadout loadout4 = WarframeLoadout.builder().loadoutName("Sandstorm Build")
+					.warframe(inaros).skills(inarosSkills).player(player2).build();
+			WarframeLoadout loadout5 = WarframeLoadout.builder().loadoutName("Titan Strength")
+					.warframe(atlasPrime).skills(atlasSkills).player(player2).build();
+			WarframeLoadout loadout6 = WarframeLoadout.builder().loadoutName("Wukong Fury")
+					.warframe(wukongPrime).skills(grendelSkills).player(player2).build();
+			WarframeLoadout loadout7 = WarframeLoadout.builder().loadoutName("Zephyr's Storm")
+					.warframe(zephyrPrime).skills(zephyrSkills).player(player1).build();
 
 			warframeLoadoutService.addLoadout(loadout1);
 			warframeLoadoutService.addLoadout(loadout2);

@@ -38,7 +38,28 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'com.google.auto.service:auto-service:1.1.1'
+	annotationProcessor 'com.google.auto.service:auto-service:1.1.1'
 }
+
+tasks.withType(Jar).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+// tasks.withType(JavaCompile).configureEach {
+//     options.generatedSourceOutputDirectory = file("$buildDir/generated/sources/annotationProcessor/java/main")
+// }
+//
+// tasks.withType(ProcessResources).configureEach {
+//     duplicatesStrategy = DuplicatesStrategy.INCLUDE
+//     from('src/main/resources') {
+//         include 'META-INF/services/**'
+//     }
+// }
+//
+// tasks.withType(JavaCompile).configureEach {
+//     options.compilerArgs << "-processor" << "ug.proj.warframe.processor.RequireApprovalProcessor"
+// }
 
 tasks.named('test') {
 	useJUnitPlatform()

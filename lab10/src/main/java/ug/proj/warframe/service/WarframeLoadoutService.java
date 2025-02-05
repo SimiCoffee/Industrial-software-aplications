@@ -3,6 +3,7 @@ package ug.proj.warframe.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ug.proj.warframe.annotations.RequireApproval;
 import ug.proj.warframe.domain.WarframeLoadout;
 import ug.proj.warframe.dto.SkillDTO;
 import ug.proj.warframe.dto.WarframeLoadoutDTO;
@@ -58,6 +59,7 @@ public class WarframeLoadoutService {
 
 	}
 
+	@RequireApproval
 	public boolean deleteLoadout(Long id) {
 		if (warframeLoadoutRepository.existsById(id)) {
 			warframeLoadoutRepository.deleteById(id);
