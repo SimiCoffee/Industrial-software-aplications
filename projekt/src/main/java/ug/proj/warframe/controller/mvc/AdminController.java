@@ -1,4 +1,4 @@
-package ug.proj.warframe.controller;
+package ug.proj.warframe.controller.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

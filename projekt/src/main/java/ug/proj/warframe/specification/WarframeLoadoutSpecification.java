@@ -1,12 +1,12 @@
 package ug.proj.warframe.specification;
 
-import org.springframework.data.jpa.domain.Specification;
-import jakarta.persistence.criteria.Predicate;
-import ug.proj.warframe.domain.WarframeLoadout;
-import ug.proj.warframe.domain.WarframeItem;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.data.jpa.domain.Specification;
+
+import jakarta.persistence.criteria.Predicate;
+import ug.proj.warframe.domain.WarframeLoadout;
 
 public class WarframeLoadoutSpecification {
 

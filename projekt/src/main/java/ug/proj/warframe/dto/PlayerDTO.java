@@ -5,8 +5,6 @@ import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ug.proj.warframe.domain.PlayerProfile;
-import ug.proj.warframe.domain.PlayerStatistics;
 
 @Data
 @NoArgsConstructor

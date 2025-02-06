@@ -1,9 +1,8 @@
 package ug.proj.warframe.dto;
 
-import ug.proj.warframe.domain.WarframeItem;
-import ug.proj.warframe.domain.Skill;
-
 import java.util.Set;
+
+import ug.proj.warframe.domain.WarframeItem;
 
 public class WarframeLoadoutDTO {
 	private Long id;

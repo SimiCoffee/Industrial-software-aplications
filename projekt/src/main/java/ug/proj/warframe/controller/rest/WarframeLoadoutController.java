@@ -1,4 +1,4 @@
-package ug.proj.warframe.controller;
+package ug.proj.warframe.controller.rest;
 
 import java.util.List;
 
