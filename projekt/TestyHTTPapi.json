@@ -1,0 +1,552 @@
+{
+  "name": "TestyHTTPapi",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "actuatorHealth",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8080/actuator/health",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "delWarframe",
+      "seq": 8,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/9",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"id\": 9,\n  \"name\": \"Excaliburrrrr\",\n  \"health\": 0,\n  \"shields\": 300,\n  \"armor\": 225,\n  \"energy\": 150\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "getNativePlayerByRank",
+      "seq": 19,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/players/by-mastery-rank?rank=15",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "rank",
+            "value": "15",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "getPlayer",
+      "seq": 17,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/players/1",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "getPlayers",
+      "seq": 16,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/players",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "getWarframe",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/1",
+        "method": "GET",
+        "headers": [
+          {
+            "name": "X-Approval",
+            "value": "false",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "getWarframes",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "loadout",
+      "seq": 15,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/loadouts/2",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "loadouts",
+      "seq": 13,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/loadouts",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "loudout",
+      "seq": 14,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/loadouts/7",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "mappings",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8080/actuator/mappings",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "postWarframe",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"name\": \"Excaliburrrrr\",\n    \"health\": 300,\n    \"shields\": 300,\n    \"armor\": 225,\n    \"energy\": 150\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "putWarframe",
+      "seq": 6,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/9",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"id\": 9,\n  \"name\": \"Excaliburrrrr\",\n  \"health\": 300,\n  \"shields\": 200,\n  \"armor\": 200,\n  \"energy\": 150\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "putWfValidate",
+      "seq": 7,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/9",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"id\": 9,\n  \"name\": \"Excaliburrrrr\",\n  \"health\": 0,\n  \"shields\": 300,\n  \"armor\": 225,\n  \"energy\": 150\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "searchWF",
+      "seq": 18,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/loadouts/search?playerName=WarframeMaster",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "playerName",
+            "value": "WarframeMaster",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "warframeName",
+            "value": "Volt",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "minHealth",
+            "value": "300",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "maxHealth",
+            "value": "500",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "armor",
+            "value": "105",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "page",
+            "value": "1",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "size",
+            "value": "2",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "wfByHPandShield",
+      "seq": 9,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/by-health-and-shields?health=370&shields=370",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "health",
+            "value": "370",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "shields",
+            "value": "370",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "wfByHPorArmour",
+      "seq": 10,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/by-health-or-armor?health=370&armor=240",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "health",
+            "value": "370",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "armor",
+            "value": "240",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "wfByHPRange",
+      "seq": 11,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/by-health-range?minHealth=300&maxHealth=500",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "minHealth",
+            "value": "300",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "maxHealth",
+            "value": "500",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "wfHighStats",
+      "seq": 12,
+      "request": {
+        "url": "http://localhost:8080/api/warframe/items/high-stats",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "TestyHTTPapi",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
